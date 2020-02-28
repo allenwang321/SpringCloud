@@ -1,6 +1,6 @@
 eureka:
   client:
-    # 配置服务器地址
+    # 注册中心地址
     service-url:
       defaultZone: http://vn:8761/eureka/
     # eureka service不向自己注册
