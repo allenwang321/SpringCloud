@@ -1,0 +1,10 @@
+eureka:
+  client:
+    service-url:
+      # 注册中心地址
+      defaultZone: http://vn:8761/eureka/,http://vn:8762/eureka/
+spring:
+  application:
+    name: api
+server:
+  port: 8080
