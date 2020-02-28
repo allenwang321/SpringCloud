@@ -1,9 +1,12 @@
 eureka:
   client:
+    # 配置服务器地址
     service-url:
       defaultZone: http://vn:8761/eureka/
+    # eureka service不向自己注册
     register-with-eureka: false
 spring:
   application:
+    # 应用名称
     name: eureka
 
