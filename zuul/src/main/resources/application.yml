@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: zuul
+
+
+eureka:
+  client:
+    service-url:
+      # 注册中心地址
+      defaultZone: http://vn:8761/eureka/,http://vn:8762/eureka/
+  instance:
+    # 设置自定义的外网地址，防止获取到不能访问的内网ip
+    prefer-ip-address: true
+    ip-address: vn
+server:
+  port: 8000
+zuul:
+  # 不同实例中的session能够保持一致
+  sensitive-headers: Authorization
