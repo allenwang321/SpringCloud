@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+#      routes:
+#        - id: api
+#          uri: lb://API
+#          predicates:
+#            - Path=/demo/**
+#          filters:
+#            - StripPrefix=1
+
+
+
+eureka:
+  client:
+    service-url:
+      # 注册中心地址
+      defaultZone: http://vn:8761/eureka/,http://vn:8762/eureka/
+#  instance:
+#    # 设置自定义的外网地址，防止获取到不能访问的内网ip
+#    prefer-ip-address: true
+#    ip-address: vn
+server:
+  port: 8000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
