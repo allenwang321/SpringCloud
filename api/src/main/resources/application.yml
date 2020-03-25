@@ -9,6 +9,19 @@ eureka:
     ip-address: vn
 spring:
   application:
-    name: api
+    name: context-path-api
+  redis:
+    host: ameng
+    database: 0
+    password: springcloudr
+  session:
+    store-type: redis
+
+
 server:
   port: 8080
+  servlet:
+    session:
+      cookie:
+        path: /
+    context-path: /api

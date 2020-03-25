@@ -20,26 +20,20 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index() {
-
         RestTemplate restTemplate = new RestTemplate();
-
         ServiceInstance serviceInstance = loadBalancerClient.choose("API");
         String url = String.format("http://%s:%s", serviceInstance.getHost(), serviceInstance.getPort());
         String response = restTemplate.getForObject(url, String.class);
         return response;
-
     }
 
     @RequestMapping("/info")
     public Info info() {
-
         RestTemplate restTemplate = new RestTemplate();
-
         ServiceInstance serviceInstance = loadBalancerClient.choose("API");
         String url = String.format("http://%s:%s/info", serviceInstance.getHost(), serviceInstance.getPort());
         Info response = restTemplate.getForObject(url, Info.class);
         return response;
-
     }
 
     @RequestMapping("info-new")

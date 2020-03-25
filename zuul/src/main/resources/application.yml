@@ -1,6 +1,12 @@
 spring:
   application:
     name: zuul
+  redis:
+    host: ameng
+    database: 0
+    password: springcloudr
+  session:
+    store-type: redis
 
 
 eureka:

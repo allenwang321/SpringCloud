@@ -2,7 +2,7 @@ eureka:
   client:
     # 注册中心地址
     service-url:
-      defaultZone: http://vn:8761/eureka/
+      defaultZone: http://vn:8762/eureka/
     # eureka service不向自己注册
     register-with-eureka: false
 spring:
@@ -10,3 +10,5 @@ spring:
     # 应用名称
     name: eureka
 
+server:
+  port: 8761

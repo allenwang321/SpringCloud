@@ -3,17 +3,18 @@ spring:
     name: gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lowerCaseServiceId: true
-#      routes:
-#        - id: api
-#          uri: lb://API
-#          predicates:
-#            - Path=/demo/**
-#          filters:
-#            - StripPrefix=1
+#      discovery:
+#        locator:
+#          enabled: true
+#          lowerCaseServiceId: true
+      routes:
+        - id: context-path-api
+          uri: lb://CONTEXT-PATH-API
+          predicates:
+            - Path=/context-path-api/**
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/api
 
 
 
@@ -27,7 +28,7 @@ eureka:
 #    prefer-ip-address: true
 #    ip-address: vn
 server:
-  port: 8000
+  port: 8001
 
 management:
   endpoints:
@@ -40,4 +41,4 @@ management:
 
 logging:
   level:
-    org.springframework.cloud.gateway: debug
+    root: debug
